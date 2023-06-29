@@ -19,3 +19,5 @@ Plot any random 10-second long portion of this ECG file (patient 100). Then plot
 ![image](https://github.com/travislatchman/Electrocardiograms-and-Neural-Networks/assets/32372013/637e819f-1fa8-4a19-97a5-961a14be18e4)
 ![image](https://github.com/travislatchman/Electrocardiograms-and-Neural-Networks/assets/32372013/6657da5d-542d-4782-a23c-55bab75d17e3)
 
+### **`TASK 2 Data preparation`** 
+Training data or test data is usually represented by a matrix $X \in \mathbb{R}^{N\times D}$. N represents the number of training points, and D represents the data dimension. We will consider one data point as +/- 2 seconds sequence of samples centered around a Q wave (annotation). Therefore, $D = 4f$ , where $f$ is the sample rate. Your goal is to construct such data matrix $X$. Your function should also output the corresponding label vector $y \in \mathbb{R}^{N\times 1}$. Labels should be 0 for Normal and 1 for abnormal. You should get close to a total of 100k data points.
