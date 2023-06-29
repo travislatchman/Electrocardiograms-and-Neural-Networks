@@ -27,6 +27,6 @@ will use Signal Processing lib [scipy.signal](https://docs.scipy.org/doc/scipy/r
 
 Examples of ECG spectrogram are shown below:
 
-![ECG_spetrogram.jpg](https://d3i71xaburhd42.cloudfront.net/c86f76b6eeaa1ae92e5c96a68ca47d046fc01b2e/3-Figure2-1.png)
+![image](https://github.com/travislatchman/Electrocardiograms-and-Neural-Networks/assets/32372013/e7ed5fa9-30a5-43ac-ba3a-f42da51d4d6d)
 
 M. Salem, S. Taheri and J. Yuan, "ECG Arrhythmia Classification Using Transfer Learning from 2- Dimensional Deep CNN Features," 2018 IEEE Biomedical Circuits and Systems Conference (BioCAS), Cleveland, OH, USA, 2018, pp. 1-4, doi: 10.1109/BIOCAS.2018.8584808.
