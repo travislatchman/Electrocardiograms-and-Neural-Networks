@@ -12,4 +12,4 @@ It consists of ECG recordings of several patients with sample rate 360 Hz. Exper
 * A Bidirectional LSTM was used for classification, and the model was evaluated by calculating accuracy.
 * Deep CNNs were also explored for classification tasks.  
 
-`**Task 1**`
+**`Task 1`**
