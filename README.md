@@ -40,25 +40,25 @@ To compensate for the imbalanced dataset during training, we can use a weighted 
 
 we can use techniques such as oversampling, undersampling, or a combination of both. Oversampling involves increasing the number of samples in the minority class (abnormal class in this case), while undersampling involves decreasing the number of samples in the majority class (normal class in this case). A combination of both involves both oversampling and undersampling.
 
-### **`TASK 5 LSTM`** 
+### **`Task 5 LSTM`** 
 Now, we are going to train a classifier to detect abnormal ECG cycles. We will train a simplified version of the LSTM-based network described in one of the [previously cited papers](https://www.sciencedirect.com/science/article/pii/S0010482518300738?casa_token=qrJ6hAf9tkYAAAAA:7uXqrKY5WqUM6Mjc_qg7wJ4R6QA02BGFXP0o_pOKN09yB8JIXb7067JZWY88rZc8M1G6gkkA).
 
-**Task 5.1:** Using Pytorch, create a single layer Bidirectional LSTM model. Followed by LSTM layer, you should have linear layer with sigmoid activation and a single output (we are predicting Normal/Abnormal).
+Using Pytorch, create a single layer Bidirectional LSTM model. Followed by LSTM layer, you should have linear layer with sigmoid activation and a single output (we are predicting Normal/Abnormal).Train and test your model, report your accuracy and F1-score on test set and train set. (You can find the definition and formula of accuracy, precision, recall-rate, and f1-score from this [link](https://towardsdatascience.com/the-f1-score-bec2bbc38aa6)). Print the loss function and accuracy while training to make sure your model works. Add a flattening layer after LSTM layer (and before linear layer).
 
-**Task 5.2:** While creating your LSTM model, how could you validate your model in a real scientific experiment? (Describe and comment it in a text cell)
-5.2: In a real scientific experiment, we could validate the LSTM model by using a holdout validation set to evaluate the performance of the model on data that was not used during training. Also, cross-validation can be used to estimate the generalization performance of the model on a wider range of data. We can also compare the performance of the LSTM model to that of other models or methods on the same dataset and visualize the learned representations in the LSTM layer to gain insights into the features that are important for classification.
+### **`Task 6 1-D CNNs`** 
+Different to LSTM model, we will have [1D CNN](https://pytorch.org/docs/stable/generated/torch.nn.Conv1d.html) layer with ReLU activation. You need to add a flattening layer just after this (and before linear layer).
 
-**Task 5.3:** Train and test your model, report your accuracy and F1-score on test set and train set. 
+Using Pytorch, create a deep CNN model (more than 1 layer). Followed by CNN layer, you should have one or several linear layers with different kinds of activation and number of final output units equals to 1. Train and test your model, report your accuracy and F1-score on test set and train set. Print the loss function and accuracy while training to make sure your model works. Add a flattening layer after CNN layer (and before linear layer). Sigmoid is recommended as the activation of your last linear layer.
 
-**Task 5.4:** What do you think is a way to increase the accuracy and F1-score? Try it and show if it is helpful.
-5.4: To increase the accuracy and F1-score, we can try several approaches:
+### **`Task 7 Alexnet`** 
+AlexNet is a deep convolutional neural network (CNN) designed by Alex Krizhevsky, Ilya Sutskever, and Geoffrey Hinton, which achieved a significant breakthrough in the field of computer vision by winning the ImageNet Large Scale Visual Recognition Challenge (ILSVRC) in 2012. It was one of the first deep neural networks to use multiple layers and dropout regularization to prevent overfitting. You can find the introduction of Alexnet in this paper ["ImageNet Classification with Deep Convolutional
+Neural Networks"](https://papers.nips.cc/paper/2012/file/c399862d3b9d6b76c8436e924a68c45b-Paper.pdf)
 
-Increase the number of layers or hidden units in the LSTM model.
-Apply regularization techniques such as dropout or weight decay.
-Optimize hyperparameters using techniques like grid search, random search, or Bayesian optimization. Train the model for a higher number of epochs or with different learning rates.
+Establish and train a AlexNet which is similiar to the AlexNet of the paper: ["Classification of ECG signal using FFT based improved Alexnet classifier"](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9514660/) The structure of Alex Net is shown below. Train and test AlexNet, report accuracy and F1-score on test set and train set. If you think the features are too less for so many layers, you can use one conv layer to replace conv 3 - conv 5 and one linear layer to replace FC 6 - FC 8. You can add dropout layer if needed.
 
-**Note 1:** Print the loss function and accuracy while training to make sure your model works.
+![image](https://github.com/travislatchman/Electrocardiograms-and-Neural-Networks/assets/32372013/fdcc4d0b-bda1-47b2-8e76-dba82d56b4ef)
 
-**Note 2:** You need to add a flattening layer after LSTM layer (and before linear layer).
+Kumar M A, Chakrapani A. Classification of ECG signal using FFT based improved Alexnet classifier. PLoS One. 2022;17(9):e0274225. Published 2022 Sep 27. doi:10.1371/journal.pone.0274225
 
-**Note 3:** The output of LSTM in pytorch lib have a tuple outout, add the following GetLSTMOutput after your layer. If your model doesn't have this problem, you can ignore this.
+### **`Task 8 GRU`** 
+Gated recurrent units (GRUs) are a gating mechanism in recurrent neural networks, [introduced in 2014 by Kyunghyun Cho et al](https://arxiv.org/abs/1409.1259). You need to create your own GRUs, train and test the model, and report accuracy and F1-score on train set and test set.
